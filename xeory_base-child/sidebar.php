@@ -9,12 +9,15 @@
 			else:
 			?>
 			<?php if(is_category()){
-	$category=get_the_category()[0];
-	if(get_twitter_ID($category->cat_ID)!=""){
+//	$category=get_the_category()[0];
+	$category=get_query_var('cat'); 
+	// 	echo $category->name;
+	
+	if(get_twitter_ID($category)!=""){
 			?>
 			<div id="twi-posts-3" class="widget_twi side-widget">
 				<div class="side-widget-inner">
-					<a class="twitter-timeline" data-width="649" data-height="480" href="https://twitter.com/<?php echo get_twitter_ID($category->cat_ID)?>?ref_src=twsrc%5Etfw" style='max-width="440px" max-height="960px"'>Tweets by <?php echo$category->name; ?></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					<a class="twitter-timeline" data-width="649" data-height="480" href="https://twitter.com/<?php echo get_twitter_ID($category)?>?ref_src=twsrc%5Etfw" style='max-width="440px" max-height="960px"'>Tweets by <?php echo$category->name; ?></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 				</div>
 			</div>
 			<?php 

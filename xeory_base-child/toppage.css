@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+div#features{display:none;}
+
 #header{
 	background: rgb(24, 0, 183);
 }

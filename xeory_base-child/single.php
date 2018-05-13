@@ -95,7 +95,15 @@
 						$author_meta_name = get_the_author_meta('display_name');
 						$googleplus = get_the_author_meta('googleplus');
 						$disp_author_description = get_the_author_meta('description');
-
+// 						
+// 						$selector=;
+// 						echo 'test';
+// 						echo  get_field("designed_profile", "user_kikuta-yuji");
+// 						echo 'test';
+// 						$disp_author_description =get_field($selector);
+						$author_id = get_the_author_meta('ID');
+						$disp_author_description = get_field('designed_profile', 'user_'. $author_id );
+						
 						$disp_avatar =<<<eof
 							<aside class="post-author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
 							<div class="clearfix">
@@ -108,7 +116,7 @@
 							</div>
 							<div class="post-author-meta">
 							<h4 itemprop="name" class="author vcard author">{$author_meta_name}</h4>
-							<p>{$disp_author_description}</p>
+							<span>{$disp_author_description}</span>
 							</div>
 							</div>
 							</aside>
@@ -143,7 +151,23 @@ eof;
 
 								<div class="post_cat_meta">
 									<h4 itemprop="name" class="author vcard author"><?php echo $cat[0] -> name; ?></h4>
-									<p class="cat_description"><?php echo $cat[0] -> description; ?></p>
+									<?php $post_string= get_post_meta($post->ID, 'bzb_meta_description', true); ?>
+									<span class="cat_description">
+										<?php
+// 										echo $cat[0] -> description;//echo bzb_category_description();//echo $post_string; //echo $cat[0] -> description; 
+										$t_id=$cat[0]->cat_ID;
+// 										echo $t_id; 
+										$cat_class = get_category($t_id);
+										$cat_option = get_option('cat_'.$t_id);
+
+										if(is_array($cat_option)){
+											$cat_option = array_merge(array('cont'=>''),$cat_option);
+										}
+  
+										echo $content = apply_filters( 'the_content', stripslashes($cat_option['bzb_meta_content']), 10 );
+										?>
+									</span>
+
 								</div><!-- /post_cat_meta -->
 							</div>
 

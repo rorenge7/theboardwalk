@@ -10,22 +10,17 @@
 
 					<?php $userId = get_query_var('author'); ?>
 					<?php $user = get_userdata($userId); ?>
-					<section class="cat-content">
-						<header class="cat-header">
-							<h1 class="post-title"><?php bzb_title(); ?></h1>
-						</header>
-						<?php if (!empty($user->description)) { ?>
-						<div class="cat-content-area">
-							<p><?php echo $user->description; ?></p>
-						</div>
-						<?php } ?>
-					</section>
+<!-- 					<section class="cat-content"> -->
+<!-- 						<header class="cat-header"> -->
+							<?php 	echo show_writer_info()?>
+<!-- 						</header> -->
+<!-- 					</section> -->
 
-					
+
 					<?php //<h1>?>
 					<?php //echo $user->display_name; ?>
 					<?php //<span> の投稿一覧</span></h1>?>
-					
+
 
 					<?php $posts = get_posts("author=$userId&orderby=date&post_type=post&numberposts=1000"); ?>
 					<?php if (!empty($posts)) { 
@@ -50,8 +45,15 @@
 									<a href="<?php the_permalink(); ?>" rel="nofollow"><?php the_post_thumbnail(); ?></a>
 								</div>
 								<?php } ?>      
+								<div class="post-description">
 
-								<?php the_excerpt(); ?>
+									<?php $post_string= get_post_meta($post->ID, 'bzb_meta_description', true);?>
+ 									<?php	//if( mb_ereg_match("[\s　]+", $post_string )){ the_excerpt();}else{echo $post_string;}
+									//the_excerpt();
+									echo $post_string;
+									?>
+								</div>
+
 								<a href="<?php the_permalink(); ?>" class="more-link" rel="nofollow">続きを読む</a>
 							</section>
 						</article>

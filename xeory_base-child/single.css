@@ -4,6 +4,11 @@
 	display: none;
 }
 
+.post-author-meta p {
+    margin: 0 0 1.6em;
+    line-height: 1.6;
+}
+
 .post-content h2{
 	text-align:left;
 }
@@ -99,3 +104,87 @@ input.wpcf7-form-control.wpcf7-submit, textarea.wpcf7-form-control.wpcf7-textare
 	max-width:355px;
 }
 
+
+/* 挿入用 プロフィール情報修飾  開始*/
+.post-content .post-author span {
+	margin: 0 0 0;
+}
+
+.post-content .post-author { 
+	padding: 20px 32px; 
+	border: 2px solid #e1e1e1; 
+}
+.post-content .post-author img {
+	border-radius: 50%;
+}
+.post-content .post-author-meta { 
+	font-size: 80% ;
+}
+@media screen and (max-width: 650px) {
+	.post-content .post-author .clearfix {
+		padding-left: 15px;
+		padding-right: 15px;
+
+	}
+}
+section.post-content { 
+	padding-top: 0px;
+}
+/* プロフィール情報修飾  終了*/
+
+/* 記事下のプロフィール情報修飾*/
+.post-share .post-author span {
+	margin: 0 0 0;
+}
+
+.post-share .post-author { 
+	padding: 20px 32px; 
+	border: 2px solid #e1e1e1; 
+	margin-bottom:5px;
+	margin-top:5px;
+}
+.post-share .post-author img {
+	border-radius: 50%;
+}
+.post-share .post-author-meta { 
+	font-size: 80% ;
+}
+@media screen and (max-width: 650px) {
+	.post-share .post-author .clearfix {
+		padding-left: 15px;
+		padding-right: 15px;
+
+	}
+}
+section.post-share { 
+	padding-top: 0px;
+}
+
+/* 記事下 プロフィール情報 終了*/
+
+/* 記事下 カテゴリー情報 開始*/
+.post-share .post_cat span {
+	margin: 0 0 0;
+}
+
+.post-share .post_cat { 
+	padding: 20px 32px; 
+	border: 2px solid #e1e1e1; 
+}
+.post-share .post_cat img {
+	border-radius: 50%;
+}
+.post-share .post_cat_meta { 
+	font-size: 80% ;
+}
+@media screen and (max-width: 650px) {
+	.post-share .post_cat .clearfix {
+		padding-left: 15px;
+		padding-right: 15px;
+
+	}
+}
+section.post-share { 
+	padding-top: 0px;
+}
+/* 記事下 カテゴリー情報 終了*/

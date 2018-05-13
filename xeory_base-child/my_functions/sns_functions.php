@@ -10,9 +10,9 @@ function get_twitter_ID($categoryID){
 		case 10:
 		return "toseethe_world";		
 		
-		// 		bit penguin		
+		// 		bit penguin
 		case 11:
-		return "blockchain_ut";
+		return "Blockchain_UT";
 		
 		// 		Pass on
 		case 19:
@@ -22,7 +22,7 @@ function get_twitter_ID($categoryID){
 		case 20:
 		break;
 
-		//CR_ASH
+		//		CR_ASH
 		case 21:
 		return "IoT_creator";
 			
@@ -31,7 +31,7 @@ function get_twitter_ID($categoryID){
 		return "buzz_creators_";
 		
 		// 		OSCE
-				case 24:
+		case 24:
 		return "OSCcccE";
 		
 		//		Curogames

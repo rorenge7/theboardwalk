@@ -11,7 +11,26 @@
 
 				<section class="cat-content">
 					<header class="cat-header">
-						<h1 class="post-title"><?php bzb_title(); ?></h1>
+						<?
+							 if( is_category() ) {
+							$cat_info = get_the_category(); 
+							$cat='category_'.$cat_info[0]->cat_ID;
+							// 										   echo $cat;
+							$catimg = get_field('category_icon_small',$cat);
+							// 											echo $catimg;
+							$img = wp_get_attachment_image_src($catimg, 'full');
+							// 											echo $img[0];
+							?>
+							<img
+								 src="<?php echo $img[0]; ?>"
+								 class="cat_icon"
+								 height="100"
+								 /><?php 
+							 }
+						?>
+						<h1 class="post-title">
+						<?php 
+							echo $cat_info[0]->cat_name;?></h1>
 					</header>
 					<?php if( is_category() ) { ?>
 					<div class="cat-content-area">
@@ -49,8 +68,16 @@
 								<a href="<?php the_permalink(); ?>" rel="nofollow"><?php the_post_thumbnail(); ?></a>
 							</div>
 							<?php } ?>      
+							<div class="post-description">
 
-							<?php the_excerpt(); ?>
+								<?php //the_excerpt();
+								// 								get_the_description();
+								// 								echo get_post_meta('description');
+								$post_string= get_post_meta($post->ID, 'bzb_meta_description', true);
+								echo $post_string;
+								?>
+							</div>
+
 							<a href="<?php the_permalink(); ?>" class="more-link" rel="nofollow">続きを読む</a>
 
 						</section>

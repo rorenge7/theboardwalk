@@ -313,9 +313,9 @@ body.home #content {
 
 	h1.post-title{
 		font-size: 24px;
-		background: #f6f6f6;
-		border: none;
-		border-left: 5px solid #1801b7;
+/* 		background: #f6f6f6; */
+/* 		border: none; */
+/* 		border-left: 5px solid #1801b7; */
 		padding: 20px 20px 20px 41px;
 	}
 	h4.side-title {
@@ -634,6 +634,9 @@ body.home #content {
 * #############*/
 
 @media screen and (max-width: 767px) {
+	h1.post-title{
+		padding:0;
+	}
 	.float_item_post {
 		width:auto;
 	}

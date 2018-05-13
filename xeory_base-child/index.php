@@ -21,7 +21,7 @@
 						<?php		if ( have_posts() ) : 
 						setPostViews(get_the_ID());
 						query_posts('meta_key=post_views_count&orderby=meta_value_num&posts_per_page=4&order=DESC'); while(have_posts()) : the_post(); ?>
-												<div class="float_item_post" >
+						<div class="float_item_post" >
 							<a href="<?php the_permalink(); ?>"> 
 
 								<div  id="post-<?php echo the_ID(); ?>"<?php post_class(array('some_post')); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
@@ -33,7 +33,7 @@
 										// 												get_the_tags();
 										?>
 										<?php if( get_the_post_thumbnail() ) { ?>
-										<div class="post-thumbnail phone_right">
+										<div class="post-thumbnail">
 											<!-- 									<a href="<?php the_permalink(); ?>" rel="nofollow"> -->
 											<?php the_post_thumbnail(full,array('class' => 'post_img')); ?>
 											<!-- 									</a> -->
@@ -42,7 +42,7 @@
 										<div class="post-thumbnail">
 											<!-- 									<a href="<?php the_permalink(); ?>" rel="nofollow"> -->
 
-											<?php echo '<img src="' . get_bloginfo('url') . '/wp-content/uploads/common/default.png' . '"  alt="thumbnail"  class="post_img post-loop-wrap post-thumbnail  left-aligned"/>';?>
+											<?php echo '<img src="' . get_bloginfo('url') . '/wp-content/uploads/common/default.png' . '"  alt="thumbnail"  class="post_img  post-thumbnail  left-aligned"/>';?>
 											<!-- 								</a> -->
 										</div>
 										<?php } ?>
@@ -54,7 +54,7 @@
 									</div>
 								</div>
 							</a>
-							<div class="post-header phone_right">
+							<div class="post-header">
 								<div class="post-header-content">
 									<a href="<?php the_permalink(); ?>"> 
 										<ul class="post-meta list-inline">
@@ -110,16 +110,17 @@
 										echo "</a>";
 										?>
 									</div>
+									
+									
 									<div class="post_cat">
-
 										<?php
 										$cat_info=get_the_category();
 										?>
 										<?php if(FALSE): ?>
+										
 										<div class="cat_name">
-
 											<a 
-											   href= "<?php echo $cat_info[0]->slug;?> "
+											   href="<?php echo $cat_info[0]->slug;?> "
 											   >
 
 												<?php echo $cat_info[0]->cat_name;?>												
@@ -130,7 +131,7 @@
 										<?php echo  getPostViews(get_the_ID()); ?>											
 										<?php if(TRUE): ?>
 										<a
-										   href= " <?php echo $cat_info[0]->slug; ?>  " 
+										   href=  "<?php echo site_url();?>/category/<?php echo $cat_info[0]->slug; ?>  " 
 										   class="cat_info"
 										   >
 
@@ -171,8 +172,11 @@
 
 
 
-						<?php		if ( have_posts() ) : ?>
-						<?php												query_posts(array(array('category__not_in' => array(1,12)),'posts_per_page'=>12)); ?>
+						<?php if ( have_posts() ) : ?>
+						<?php 
+						query_posts(array(array('category__not_in' => array(1,12)),'posts_per_page'=>12)); 
+// 						query_posts(array(array('category__not_in' => array(1,12)),'posts_per_page'=>12));
+						?>
 						<?php //query_posts('posts_per_page=3&cat=12&paged='.$paged); ?>
 
 						<?php while ( have_posts() ) : the_post(); ?>
@@ -180,8 +184,8 @@
 						$cat=get_the_category();
 						//
 						// 			echo ($cat[0]->cat_ID);
-						if($cat[0]->cat_ID==12)continue;
-						if($cat[0]->cat_ID==1)continue;
+// 						if($cat[0]->cat_ID==12)continue;
+// 						if($cat[0]->cat_ID==1)continue;
 						?>
 
 						<div class="float_item_post" >
@@ -293,7 +297,7 @@
 
 										<?php if(TRUE): ?>
 										<a
-										   href= " <?php echo $cat_info[0]->slug; ?>  " 
+										   href= "<?php echo site_url();?>/category/<?php echo $cat_info[0]->slug; ?>  " 
 										   class="cat_info"
 										   >
 
@@ -348,6 +352,7 @@
 
 				</div>
 				<div id="categories" class=" category top-section-wrap">
+
 					<h2 class="top-section-title">登録団体一覧</h2>
 
 					<div class="category top-section" style="text-align: center;">
@@ -497,51 +502,152 @@
 					<h3>
 						BOARDWALKに初めて訪れた方にオススメしたい記事
 					</h3>
+					<div class="post-loop-wrap top-section">
+						<?php		if ( have_posts() ) : 
+						setPostViews(get_the_ID());
+						// 						query_posts('meta_key=post_views_count&orderby=meta_value_num&posts_per_page=4&order=DESC'); 
+						while(have_posts()) : the_post(); ?>
+						<div class="float_item_post" >
+							<a href="<?php the_permalink(); ?>"> 
 
-					<div class="introductions top-section" style="text-align: center;">
-						<ul  class="intro_article post-loop-wrap">
-							<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-							<li class="float_item_first">
-								<div class="left line_item button">
-									<a href="<?php the_permalink(); ?>" >
-										<div class="phone_left post_img">
+								<div  id="post-<?php echo the_ID(); ?>"<?php post_class(array('some_post')); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
 
+
+									<div class="post-content" itemprop="text">
+										<?php
+										// 										single_tag_title( );
+										// 												get_the_tags();
+										?>
+										<?php if( get_the_post_thumbnail() ) { ?>
+										<div class="post-thumbnail">
+											<!-- 									<a href="<?php the_permalink(); ?>" rel="nofollow"> -->
+											<?php the_post_thumbnail(full,array('class' => 'post_img')); ?>
+											<!-- 									</a> -->
+										</div>
+										<?php } else {?>
+										<div class="post-thumbnail">
+											<!-- 									<a href="<?php the_permalink(); ?>" rel="nofollow"> -->
+
+											<?php echo '<img src="' . get_bloginfo('url') . '/wp-content/uploads/common/newcomer.png' . '"  alt="thumbnail"  class="post_img  post-thumbnail  left-aligned"/>';?>
+											<!-- 								</a> -->
+										</div>
+										<?php } ?>
+
+										<?php // the_content('続きを読む'); ?>
+										<?php // the_excerpt(); ?>
+										<!-- 		    <a href="<?php // the_permalink(); ?>" class="more-link" rel="nofollow">続きを読む</a> -->
+
+									</div>
+								</div>
+							</a>
+							<div class="post-header">
+								<div class="post-header-content">
+									<a href="<?php the_permalink(); ?>"> 
+										<ul class="post-meta list-inline">
+											<li class="date updated" itemprop="datePublished" datetime="<?php the_time('c');?>"><i class="fa fa-clock-o"></i> <?php the_time('Y.m.d');?></li>
+										</ul>
+
+										<h3 class="post-title " itemprop="headline">
 											<?php 
-											$newcomer_post_img=get_the_post_thumbnail($post->ID, array('class' => 'top-page  left-aligned'));
-											if($newcomer_post_img==""){
-												echo '<img src="' . get_bloginfo('url') . '/wp-content/uploads/common/newcomer.png' . '"  alt="thumbnail"  class="attachment-top-page  left-aligned size-top-page  left-aligned wp-post-image" >';
-											}else{
-												echo $newcomer_post_img;
-											}
+											$title_str=esc_html(the_title('','' , FALSE)); 
+											echo shorten_str($title_str, 50);
+											// 											echo the_tags('','','');
+
 											?>
-
-
-										</div>
-
-										<div class="phone_right post_str">
-
-											<div class="news_date">
-												<!-- 												<?php the_time('n') ?>月 <span><?php the_time('d') ?>日</span> -->
-											</div>
-											<div class="news_t intro_title">
-												<!-- 												<a href="<?php the_permalink(); ?>"> -->
-												<?php the_title();?>
-												<!-- 												</a> -->
-											</div>
-											<div class="news_info" ><?php the_excerpt(); ?>
-												<!-- 								<a href="<?php the_permalink(); ?>" class="more">もっと読む</a> -->
-											</div>
-											<div class="clear"></div>
-										</div>
+										</h3>
 									</a>
 
+									<div class="post_writer">
+										<?php
+										global $user_id;
+										?>
+
+										<?php
+										$target="class=\"";
+										$replace="class=\"writer_author ";
+										$author_login=get_the_author_meta("user_login");
+										$author_link="<a href=\"". get_bloginfo('url')."/author/".$author_login. "\" >";
+										echo $author_link;
+										// 											$link= str_replace($target,$replace, $str); 
+										// 																					echo $link;
+										?> 
+
+
+										<?php 
+										$author_name = get_the_author_meta('display_name');
+
+
+										$original_avatar = get_the_author_meta('original_avatar', $user_id);
+										$avatar_image = '';
+
+										if( isset($original_avatar) && $original_avatar !== '' ){
+											$avatar_image = '<img  class ="avatar_image_icon"   src="'.$original_avatar .'" alt="アバター">';
+										}else{
+											$avatar_image = '<img class ="avatar_image_icon"  src="'.get_template_directory_uri().'/lib/images/masman.png" alt="masman" width="100" height="100" />';
+										}
+										echo '<div class="avatar_image writer_icon ">' .$avatar_image .'</div>';
+										?>
+
+										<?php
+										// 										echo $author_link;
+										echo '<span class="post_writer_name">';
+										echo $author_name;
+										echo '</span>';
+										echo "</a>";
+										?>
+									</div>
+									<div class="post_cat">
+
+										<?php
+										$cat_info=get_the_category();
+										?>
+										<?php if(FALSE): ?>
+										<div class="cat_name">
+
+											<a 
+											   href= "<?php echo $cat_info[0]->slug;?> "
+											   >
+
+												<?php echo $cat_info[0]->cat_name;?>												
+
+											</a>
+										</div>
+										<?php endif;?>
+ 										<?php //echo  getPostViews(get_the_ID()); ?>											
+										<?php if(TRUE): ?>
+										<a
+										   href= " <?php echo $cat_info[0]->slug; ?>  " 
+										   class="cat_info"
+										   >
+
+
+
+											<?php  	$cat='category_'.$cat_info[0]->cat_ID;
+											// 										   echo $cat;
+											$catimg = get_field('category_icon_small',$cat);
+											// 											echo $catimg;
+											$img = wp_get_attachment_image_src($catimg, 'full');
+											// 											echo $img[0];
+											?>
+											<img
+												 src="<?php echo $img[0]; ?>"
+												 class="cat_icon"
+												 />
+										</a>
+										<?php endif ;?>
+
+									</div>
 								</div>
-							</li>
-							<?php endwhile; endif; ?>
-							<?php wp_reset_query(); ?>
-						</ul>
-					</div>
-				</div>
+							</div>
+
+
+
+						</div>
+
+						<?php
+						endwhile;
+						endif ;?>
+					</div>				</div>
 				<?php endif; ?>
 				<div class="top-section-wrap">
 					<h2 class="top-section-title">
