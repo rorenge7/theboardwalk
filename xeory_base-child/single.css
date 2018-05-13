@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+.post-content .post-thumbnail img {
+	display: none;
+}
+
+.post-content h2{
+	text-align:left;
+}
+.post-content h3{
+	text-align:left;
+}
+
+.recruitment.post-share-title {
+	font-size: 20px;
+	padding: 10px 0;
+	margin-bottom: 0;
+	color: #fff;
+	background-color: #57585A;
+	text-align: center;
+	margin-left: -45px;
+	margin-right: -45px;
+}
+
+
+
+.post_cat{
+	border-radius: 3px;
+	margin-bottom: 0px;
+	padding: 40px 64px;
+	border-top: 1px #eee solid;
+	border-bottom: 1px #eee solid;
+	color: #383838;
+}
+@media screen and (max-width: 767px){
+	.post_cat {
+		padding-left: 0;
+		padding-right:0;
+	}
+}
+.post_cat .post_cat_img {
+	width: 80px;
+	float: left;
+}
+@media screen and (max-width: 767px){
+	#main .post_cat .post_cat_img {
+		float: none;
+	}
+	.post-share{
+		font-size:10pt;
+	}
+}
+.post_cat .post_cat_img .inner {
+	padding: 0;
+	height:80px;
+}
+.post_cat .post_cat_meta {
+	margin-left: 100px;
+}
+@media screen and (max-width: 767px){
+	#main .post_cat .post_cat_meta {
+		padding: 0;
+		margin: 10px 0 0;
+	}
+}
+.post_cat .post_cat_meta h4 {
+	margin: 0 40px 10px 0;
+	font-weight: bold;
+}
+.post_cat_meta .cat_description {
+	min-height: 80px;
+}
+.post-share .post_cat{
+	position:static;
+	text-align:left;	
+}
+@media screen and (max-width: 991px){
+	.post-share .post_cat{
+		padding:20px;
+	}
+}
+@media screen and (max-width: 650px){
+	.post-share .post_cat{
+		padding: 20px 0px 50px 0px ;
+	}
+}
+
+.post-content blockquote:before{
+	content: none;
+}
+.post-content blockquote{
+	padding-left:20px;
+	padding-right:20px;
+	
+}
+
+input.wpcf7-form-control.wpcf7-submit, textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required{
+	width:100%;
+	max-width:355px;
+}
+

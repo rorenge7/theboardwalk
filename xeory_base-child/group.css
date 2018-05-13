@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+h2.post-title{
+	font-size: 20px;
+}
+h2.post-title a{
+	font-size:100%;
+}
+
+header.post-header{
+	min-height:0;
+	height: auto;
+}
+.post-loop-wrap .post-content{
+	height:auto;
+	padding-bottom: 7px;
+}
+
+.post-loop-wrap .post-thumbnail img{
+
+}
+.post-content .post-thumbnail{
+	width: 100%;
+	display: inline-block;
+}
+.post-loop-wrap .type-post
+{
+	height:auto;
+}
+/*  レイアウト */
+@media screen and (min-width: 767px) {
+	section.post-content{
+		display: inline-block;
+	}
+	.post-content div.post-thumbnail{
+		float: left;
+		width: 200px;
+		display: inline-block;
+		margin: 10px;
+	}
+	.post-content p{
+		float: left;
+		display: inline-block;
+		width: calc(100% - 220px);
+		padding: 10px;
+		margin-bottom: 0;
+	}
+
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+
+/*#############
+* #############
+* #############
+* 					desktop
+* #############
+* #############
+* #############*/
+
+@media screen and (min-width: 1200px) {
+
+	section.post-content{
+		text-align:center;
+	}
+
+	.post-loop-wrap article p{
+		text-align: left;
+	}
+}
+
+
+/*#############
+* #############
+* #############
+* 					laptop
+* #############
+* #############
+* #############*/
+
+@media screen and (max-width:1200px) and (min-width: 991px) {
+	/* laptop */
+
+	section.post-content{
+		text-align:center;
+	}
+
+	.post-loop-wrap article p{
+		text-align: left;
+	}
+}
+
+/*#############
+* #############
+* #############
+* 					tablet
+* #############
+* #############
+* #############*/
+
+@media screen and (max-width:991px) and (min-width: 767px) {
+	.post-loop-wrap .post-thumbnail{
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.post-loop-wrap .post-content {
+		padding: 0 10px;
+	}
+}
+
+/*#############
+* #############
+* #############
+* 					phone
+* #############
+* #############
+* #############*/
+@media screen and (max-width:767px) {
+	.post-loop-wrap .post-thumbnail{
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.post-loop-wrap .post-content {
+		padding: 0 10px;
+	}
+}
